@@ -18,7 +18,7 @@ function lastCharacter(str) {
 
 expect(lastCharacter('max'), 'x');
 expect(lastCharacter('12345'), '5');
-expect(lastCharacter('excusemE'), 'E');
+expect(lastCharacter(12345), undefined);
 expect(lastCharacter(''), undefined);
 expect(lastCharacter('java script'), 't');
 
