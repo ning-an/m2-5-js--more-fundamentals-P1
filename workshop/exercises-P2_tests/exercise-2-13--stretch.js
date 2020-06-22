@@ -9,9 +9,19 @@
 
 function checkIsPalindrome(inputString) {
   // Your code here
+  let array = inputString.split('');
+  array.reverse();
+  let reversedString = array.join('');
+  return inputString === reversedString;
 }
 
 // Add 6 test cases
+expect(checkIsPalindrome('javascript'), false);
+expect(checkIsPalindrome('radar'), true);
+expect(checkIsPalindrome('20200202'), true);
+expect(checkIsPalindrome(''), true);
+expect(checkIsPalindrome('python'), false);
+expect(checkIsPalindrome('showme'), false);
 
 /**
  * -------------------------------------------------------------------
