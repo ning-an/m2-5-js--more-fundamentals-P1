@@ -10,6 +10,14 @@
 
 function wrapAfter40Chars(str) {
   // Your code here
+  if (str.length <= 40) {
+    return str;
+  }
+  if (str[40] === ' ') {
+    return str.slice(0 , 40) + '\n' + str.slice(41);
+  } else {
+    return str.slice(0 , 40) + '\n' + str.slice(40);
+  }
 }
 
 // Test case 1: No space after newline
@@ -27,7 +35,10 @@ expect(
 );
 
 // Add 4 more test cases
-
+expect(wrapAfter40Chars('You have power over your mind—not outside events. Realize this, and you will find strength.'), 'You have power over your mind—not outsid\ne events. Realize this, and you will find strength.')
+expect(wrapAfter40Chars('hello world'), 'hello world');
+expect(wrapAfter40Chars('Some programs work with direct user input'), 'Some programs work with direct user inpu\nt');
+expect(wrapAfter40Chars('Some program work with direct user input and so on'), 'Some program work with direct user input\nand so on');
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
