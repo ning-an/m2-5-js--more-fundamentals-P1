@@ -11,11 +11,22 @@
 
 function getLetterAtIndex(str, index) {
   // Your code here
+  return str[index];
 }
 
 // Add 6 more test cases
 expect(getLetterAtIndex('hello', 4), 'o');
 expect(getLetterAtIndex('goodbye', 0), 'g');
+expect(getLetterAtIndex('java', 0), 'j');
+expect(getLetterAtIndex(1234, 0), undefined);
+expect(getLetterAtIndex('javascript', 20), undefined);
+expect(getLetterAtIndex('', 3), undefined);
+expect(getLetterAtIndex(' python', 0), ' ');
+expect(getLetterAtIndex('here', 3), 'e');
+
+
+
+
 
 /**
  * -------------------------------------------------------------------
