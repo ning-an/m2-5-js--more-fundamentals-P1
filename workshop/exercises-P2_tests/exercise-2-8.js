@@ -16,9 +16,19 @@
 
 function reverse(str) {
   // Your code here
+  let array = str.split('');
+  let reversedArray = [];
+  array.forEach(elem => reversedArray.unshift(elem));
+  let res = reversedArray.join('');
+  return res;
 }
 
 // We need 5 test cases
+expect(reverse('Hello World'), 'dlroW olleH');
+expect(reverse('java'), 'avaj');
+expect(reverse('foo'), 'oof');
+expect(reverse('how are you'), 'uoy era woh');
+expect(reverse('show'), 'wohs');
 
 /**
  * -------------------------------------------------------------------
