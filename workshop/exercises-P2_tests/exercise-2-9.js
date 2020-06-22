@@ -14,9 +14,24 @@
 
 function longestWord(str) {
   // Place solution here
+  let array = str.split(' ');
+  let maxLength = 0;
+  let res;
+  array.forEach(elem => {
+    if (elem.length >= maxLength) {
+      maxLength = elem.length;
+      res = elem;
+    }
+  });
+  return res;
 }
 
 // We need 5 test cases
+expect(longestWord(''), '');
+expect(longestWord('hello world'), 'world');
+expect(longestWord('hey hello morning'), 'morning');
+expect(longestWord('exercise 2.9 solu tion'), 'exercise');
+expect(longestWord('how arrrrrrre you doing today'), 'arrrrrrre');
 
 /**
  * -------------------------------------------------------------------
