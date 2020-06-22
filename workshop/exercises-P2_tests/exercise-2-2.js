@@ -9,6 +9,7 @@
 
 function lastCharacter(str) {
   // Your code here
+  return str[str.length - 1];
 }
 
 // Step 2
@@ -16,6 +17,10 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter('12345'), '5');
+expect(lastCharacter('excusemE'), 'E');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter('java script'), 't');
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠
