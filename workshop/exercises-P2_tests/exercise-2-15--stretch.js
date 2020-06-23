@@ -25,11 +25,29 @@
 // If you struggle with it, set it aside. In a few weeks, you might find the
 // solution comes more quickly :)
 
-function uniqueElements(input) {
+function uniqueElements(...inputs) {
   // Your code here
+  if (!(inputs.every(elem => typeof elem === 'object'))) return undefined;
+  let res = [];
+  inputs[0].forEach(elem => {
+    if (!inputs[1].includes(elem)) {
+      res.push(elem);
+    }
+  })
+  inputs[1].forEach(elem => {
+    if (!inputs[0].includes(elem)) {
+      res.push(elem);
+    }
+  })
+  return res;
 }
 
 // Add 5 test cases
+expect(uniqueElements([0,1,2,3], [1,3,4,5]), [0,2,4,5]);
+expect(uniqueElements([1,2,3], [3,2,1]), []);
+expect(uniqueElements(2), undefined);
+expect(uniqueElements([1, 3, 5, 7], [2, 4, 6, 8]), [1,3,5,7,2,4,6,8]);
+expect(uniqueElements([1, 3, 5], [1, 3, 5]), []);
 
 /**
  * -------------------------------------------------------------------
